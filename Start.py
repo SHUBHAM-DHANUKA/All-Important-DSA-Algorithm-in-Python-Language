@@ -7,7 +7,7 @@ x = 1
 y = 2.0
 z = 'string'
 print(x)
-print(y)
+print(y)]
 print(z)
 print(z)
 z ='2'
