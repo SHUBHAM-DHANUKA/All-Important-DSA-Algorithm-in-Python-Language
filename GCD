@@ -1,0 +1,17 @@
+  
+m = 60
+n = 36
+o = n
+i = 0
+while(i < o/2):
+    r = m % n
+    m = n
+    n = r
+    #print(m)
+    #print(n)
+    i =i+1
+    if(m%n == 0):
+      break
+  
+print ( n)
+    
