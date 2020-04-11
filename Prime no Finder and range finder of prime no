@@ -19,3 +19,33 @@ def primenumberHunter(n):
 n =100
 for i in range (2, n ):
   primenumberHunter(i)
+
+
+==============================================================
+Including 1 or less than 1
+=============================================================
+# prime no identifier
+import math
+def primenumberHunter(n):
+  flag = 0
+  if( n ==2 or n ==3 ):
+    print("prime no:", n)
+  elif (n ==4):
+    print("Not a prime no ", n)
+  else:
+      for i in range(2, int(math.ceil(n/2))):
+        if ( n% i == 0):
+          flag  = 1
+          break
+      if (flag == 1):
+        print("Not a prime no",n)
+      else:
+        print("prime no:",n)
+      
+#Prime no range 
+n = 10
+if (n > 1):
+  for i in range (2, n ):
+    primenumberHunter(i)
+else:
+  print("No is either 1 or less than one")
