@@ -27,3 +27,24 @@ while (n!=1):
     n = x
 print(li)
 =================================================================
+
+def factorhunter(n):
+  i = 2
+  x = n
+  li = []
+  while (n!=1):
+    if(n%i == 0):
+      x = n/i
+      li.append(i)
+      n = x
+    else:
+      i = i+1
+      n = x
+  return li
+
+
+
+li1 = factorhunter(360)
+print(li1)
+li2 = factorhunter(36)
+print(li2)
