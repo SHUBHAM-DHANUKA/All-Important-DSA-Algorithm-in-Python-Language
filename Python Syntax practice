@@ -1,0 +1,109 @@
+#import sys
+#print(sys.version)
+#import datetime
+#print(datetime.datetime.now())
+#print(sys.__doc__)
+#r = float(input());
+#print((22/7)*r**2)
+'''x= input()
+y = input()
+#print(dir(str))
+print(y[::-1]+" "+ x[::-1])''' 
+#print(dir(tuple))
+'''sequence = input()
+li =list()
+tu = tuple()
+print(list(sequence))
+for i in range(len(sequence)):
+  if(i%2==0):
+    li.append(sequence[i])
+  else:
+    pass
+  #print(i)
+print(li)
+print(tuple(li))
+
+print(sequence.split(","))'''
+
+#fname = input("")
+
+#print(fname.split(".")[-1])
+
+#color_list = ["Red","Green","White" ,"Black"]
+#print(color_list[0], color_list[-1])
+
+'''exam_st_date = (11, 12, 2014)
+li= list(exam_st_date)
+print(li)
+#li.split(",")
+print(len(li))
+string =""
+for i in range(len(li)):
+  if(i<len(li)-1):
+    string = string + str(li[i]) +'/' 
+  else:
+    string = string + str(li[i])
+print(string)'''
+'''n = 5
+print(int(str(n)*1)+int(str(n)*2)+int(str(n)*3))'''
+#import math
+#print(abs.__doc__)
+
+#import calendar
+#print(dir(calendar))
+#print(calendar.month(2020,4))
+
+#string="s"
+#print(id(string))
+
+'''string = "Issstr"
+if (string.startswith("Is")):
+  print(string)
+else:
+  print("Is"+string)'''
+  
+#li = [4,4,4]
+#print(li.count(4))
+
+
+'''string = "abab"
+print(string *2)
+if (len(string) <2):
+  print(string * len(string)) '''
+  
+li = [1, 5, 8, 3]
+if ( 4 in li ):
+  print( "True")
+else:
+  print("false")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
