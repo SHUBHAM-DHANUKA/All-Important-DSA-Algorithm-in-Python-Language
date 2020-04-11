@@ -22,7 +22,7 @@ for i in range (2, n ):
 
 
 ==============================================================
-Including 1 or less than 1
+<b>Including 1 or less than 1</b>
 =============================================================
 # prime no identifier
 import math
