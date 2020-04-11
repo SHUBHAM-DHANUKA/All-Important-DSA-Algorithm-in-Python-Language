@@ -1,0 +1,21 @@
+import math
+def primenumberHunter(n):
+  flag = 0
+  if( n ==2 or n ==3 ):
+    print("prime no:", n)
+  elif (n ==4):
+    print("Not a prime no ", n)
+  else:
+      for i in range(2, int(math.ceil(n/2))):
+        if ( n% i == 0):
+          flag  = 1
+          break
+      if (flag == 1):
+        print("Not a prime no",n)
+      else:
+        print("prime no:",n)
+      
+#Prime no range 
+n =100
+for i in range (2, n ):
+  primenumberHunter(i)
