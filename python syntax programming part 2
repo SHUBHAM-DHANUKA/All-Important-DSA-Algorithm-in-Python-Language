@@ -1,0 +1,19 @@
+'''import math
+X1 = 10
+Y1 = 6 
+X2 = 5
+Y2 = 4
+print(math.sqrt((X2-X1)**2+(Y2-Y1)**2))
+'''
+'''
+import os.path
+#print(dir(os))
+print(os.write.__doc__)
+import platform
+print(os.name)
+print(platform.system())
+print(platform.release())
+import subprocess
+print(subprocess.call(["ls",  "-l"]) )
+
+'''
