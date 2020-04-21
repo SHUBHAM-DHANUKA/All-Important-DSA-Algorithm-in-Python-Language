@@ -1,0 +1,56 @@
+'''def sequenceofno(li):
+  if(len(li) == len(set(li))):
+    print("No single no exists")
+  else:
+    print("dublicate no")
+  
+Li = [1,2,3,4,2]
+sequenceofno(Li)
+'''
+'''
+li = ['a','e','i','o','u']
+li.pop(0)
+print(li)
+'''
+'''
+li=[1,2,3,4,5,6,7,8,9]
+i = 0
+while(len(li)!=3):
+  if(i!=len(li)):
+    print(li[i+2])
+    li.pop(i+2)
+    i = i+2
+  else:
+    i = 0
+for i in range(len(li)):
+  print(li[len(li)-i-1])
+
+'''
+def three_sum(nums):
+  result = []
+  nums.sort()
+  for i in range(len(nums)-2):
+    if i> 0 and nums[i] == nums[i-1]:
+      continue
+    l, r = i+1, len(nums)-1
+    while l < r:
+      s = nums[i] + nums[l] + nums[r]
+      if s > 0:
+        r -= 1
+      elif s < 0:
+          l += 1
+      else:
+        # found three sum
+        result.append((nums[i], nums[l], nums[r]))
+        # remove duplicates
+        while l < r and nums[l] == nums[l+1]:
+          l+=1
+          while l < r and nums[r] == nums[r-1]:
+            r -= 1
+            l += 1
+            r -= 1
+          return result
+
+x = [1, -5, 3, -1, 2, 2, 0, -2, 0 ]
+print(three_sum(x))
+========================================================
