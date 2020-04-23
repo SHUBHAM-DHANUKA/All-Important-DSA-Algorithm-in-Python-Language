@@ -97,3 +97,28 @@ while(i<len(x)):
   j =0
   k =0
   ============================================
+def swap():
+  x =5
+  return x
+  
+print(swap())
+
+
+
+ 
+class test:
+  x = 5
+  
+t = test();
+print(t.x)
+
+class Printer:
+  
+  def __init__(self, s):
+    self.string = s
+    
+  def __call__(self,x):
+    print(self.string, x)
+    
+p =  Printer('shubham')
+p.__call__(4)
