@@ -61,3 +61,29 @@ li1.insert(0,'d')
 string1 = ''
 string1= string1.join(li1)
 print(string1)
+=========================================
+str1 = "shubham"
+str2 = " "
+for i in range(len(str1)):
+  if(i%2==0):
+    str2 = str2 + str1[i]
+print(str2)
+
+str1 ="Hi i am good"
+li1 = list(str1.split())
+print(li1)
+
+string = "hi good boy"
+str1= string.upper()
+print(str1)
+print(string.lower())
+
+
+
+words ="red, white, black, red, green, black"
+words = words.split(",")
+print(sorted (words))
+
+
+
+
