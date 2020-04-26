@@ -25,3 +25,39 @@ print(stringbuilder("w"))
 str = "restart"
 str1= str[:str.find("r")+1]+str[str.find("r")+1:].replace("r", "$" )
 print(str1)
+
+====================================================================
+def string(str):
+  if (len(str)<3):
+    return str
+  elif(str.endswith("ing")):
+    return str+"ly"
+  else:
+    return str + "ing"
+    
+print(string("xy"))
+print(string("abc"))
+print(string("string"))
+
+
+string =  "The lyrics is poor!"
+if ( "not" and "poor" in string ):
+  str1= string.replace("not that poor", "good")
+else:
+  str1 = string
+  
+print(str1)
+
+li = ['Hi', 'good', 'shubham' ]
+dic={}
+for i in li:
+  dic[i] = len(i)
+print(max(dic))
+
+
+string = "shubham"
+li1= list(string)
+li1.insert(0,'d')
+string1 = ''
+string1= string1.join(li1)
+print(string1)
