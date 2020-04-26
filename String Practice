@@ -85,5 +85,30 @@ words = words.split(",")
 print(sorted (words))
 
 
+================================
+def add_tags(item ,  word):
+  string = "<"+item +">" + word + "</"+item+">"
+  return string
 
+string = add_tags('b','python')
+print(string)
+
+def insert_sting_middle(box, word):
+  if(len(box)%2 ==0 ):
+    li =[]
+    string = ''
+    li= list(box)
+    n = int(len(box)/2)
+    li1= li.insert(n , word)
+    
+    string = string.join(li)
+    return string
+  else:
+    string = "nothing to do with it"
+    return string
+  
+  
+  
+string= insert_sting_middle('[[]]', 'Python')
+print(string)
 
