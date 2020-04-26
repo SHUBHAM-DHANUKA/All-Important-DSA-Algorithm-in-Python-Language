@@ -1,0 +1,27 @@
+str = "Hi"
+print(len(str))
+str1= "google.com"
+dic = {}
+for i in str1:
+  dic[i]=str1.count(i);
+  
+print(dic)
+
+
+
+def stringbuilder( str ):
+  if (len(str)<2):
+    return "Empty string"
+  else:
+    return str[0]+str[1]+str[-2]+str[-1]
+    
+    
+print(stringbuilder("w3resource"))
+print(stringbuilder("w3"))
+print(stringbuilder("w"))
+
+
+
+str = "restart"
+str1= str[:str.find("r")+1]+str[str.find("r")+1:].replace("r", "$" )
+print(str1)
