@@ -112,3 +112,27 @@ def insert_sting_middle(box, word):
 string= insert_sting_middle('[[]]', 'Python')
 print(string)
 
+============================================================
+def stringConverter(str):
+  string = str
+  num = 0 
+  
+  if(len(str)>=3):
+    string1= str[0:4]
+  else:
+    string1 = str
+    
+  for i in string1:
+    if i.upper() == i:
+      num = num+1
+  
+  if (num>=2):
+    return string.upper()
+  else:
+    return "Your string does not contain any upper case"
+  
+  
+string = stringConverter("HELLO")
+string1 = stringConverter("hello")
+print(string)
+print(string1)
