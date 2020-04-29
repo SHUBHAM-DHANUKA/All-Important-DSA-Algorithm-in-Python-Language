@@ -1,1 +1,17 @@
+string = "HI i am 321 good"
+print(sorted(string))
+
+string = "@shubham"
+if(string.startswith("@")):
+  print("yes! fucking starts with @")
+else:
+  print("no it doesnt start with @")
+  
+string = "dhanuka"
+string1 = ""
+for i in string:
+  i = ord(i)+3
+  string1= string1+ chr(i)
+print(string1)
+===============================
 
