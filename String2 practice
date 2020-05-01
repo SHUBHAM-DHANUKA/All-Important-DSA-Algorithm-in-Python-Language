@@ -14,4 +14,35 @@ for i in string:
   string1= string1+ chr(i)
 print(string1)
 ===============================
+a = 1.2074
 
+line = "Hi i am good"
+li = list(str(a).split("."))
+
+string1 = "2"
+string2 = "3"
+print(string1+string2)
+
+if len(li[1]) > 2:
+  #print(len(li[1]))
+  #print(li[1][2])
+  if int(li[1][2])>=5:
+    #print(li[1][2])
+    b= int(li[1][0]+li[1][1]) + 1
+    li[1] = str(b)
+
+print(li)
+
+
+
+string1 = "shubham"
+print(string1[::-1])
+
+print(string1.strip("s"))
+
+string="the quick brown fox"
+li = string.split(" ")
+print(li[::-1])
+
+print(string.index('t'))
+=======================================
