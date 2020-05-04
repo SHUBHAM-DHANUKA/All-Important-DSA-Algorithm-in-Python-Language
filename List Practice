@@ -1,0 +1,24 @@
+li  = [1,2,3,4,5,6,7]
+print(sum(li))
+mul = 1
+for i in li:
+  mul= mul * i 
+print(mul)
+
+
+print(max(li))
+print(min(li))
+
+count = 0 
+li =  ['abc', 'xyz', 'aba', '1221']
+for i in li:
+  if  len (i) >= 2:
+    
+    if(i[0]==i[-1]):
+      #print(li[0], li[-1])
+      count = count +1
+  else:
+    print("not a single string contain more than 2 character")
+print(count)    
+
+    
