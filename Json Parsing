@@ -1,3 +1,4 @@
+===================================================
 import urllib.request, urllib.parse, urllib.error
 import json
 import ssl
@@ -27,3 +28,31 @@ print(sum)
 #for i in info:
 #    sum = sum + 
 #print(sum)
+
+===============================================================
+'''Python program to convert JSON data to Python object.'''
+import json
+json_obj =  '{ "Name":"David", "Class":"I", "Age":6 }'
+python_obj = json.loads(json_obj)
+print("\nJSON data:")
+print(python_obj)
+print("\nName: ",python_obj["Name"])
+print("Class: ",python_obj["Class"])
+print("Age: ",python_obj["Age"])
+=================================================================
+'''Convert python object to jSON data'''
+
+import json
+# a Python object (dict):
+python_obj = {
+  "name": "David",
+  "class":"I",
+  "age": 6  
+}
+print(type(python_obj))
+# convert into JSON:
+j_data = json.dumps(python_obj)
+
+# result is a JSON string:
+print(j_data)
+
