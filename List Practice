@@ -20,5 +20,18 @@ for i in li:
   else:
     print("not a single string contain more than 2 character")
 print(count)    
+================================
+li = ['c','d','e']
+string1 = ' '
+String = string1.join(li)
+print(String)
+
+print(li.index('c'))
+li = ['c','d','e']
+li1= ['f','g','h']
+li= li.append(li1)
+print(li)
+#print(li.random)
+#print(dir(li))
 
     
