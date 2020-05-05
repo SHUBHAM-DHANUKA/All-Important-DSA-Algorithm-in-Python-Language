@@ -43,6 +43,20 @@ for i in li:
   if i >4 and i<=6:
     count =count+1
 print(count)
+==========================================================
+print("Hello world") 
+li = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+print(li)
+li0= []
+li1 = []
+for i in li:
+    if(len(li0)<5):
+        li0.append(i)
+    else:
+        li1.append(li0)
+        li0 = []
+li1.append(li0)
+print(li1)    
 
   
     
