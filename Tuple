@@ -1,0 +1,7 @@
+tu = (1,'2',3,4)
+tu2= (5,6)
+tu = tu.__add__(tu2)
+print(tu)
+tu = ('hi')
+print(str(tu))
+================
