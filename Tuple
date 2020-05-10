@@ -5,3 +5,16 @@ print(tu)
 tu = ('hi')
 print(str(tu))
 ================
+tu = (1,2,3,4,1)
+print(tu)
+if 1 in tu:
+  print("ture")
+  
+for i in tu:
+  a= tu.count(i)
+  if(a>=2):
+    print(i)
+  
+li = [1,2,3,4]
+print(tuple(li))
+===========
