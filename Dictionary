@@ -61,3 +61,9 @@ for i in d1:
   else:
     d2[i] = d1[i]
 print(d2)
+====================
+di =  {'1':['a','b'], '2':['c','d']}
+print(di['1'][1])
+
+di=  {'Math':81, 'Physics':83, 'Chemistry':87}
+print(sorted(di.items()))
