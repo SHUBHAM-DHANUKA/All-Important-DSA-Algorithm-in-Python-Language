@@ -1,0 +1,27 @@
+di= {1: 100, 0: 20}
+print(sorted(di.values()))
+print(sorted(di.items()))
+di= {0: 10, 1: 20}
+di[2] =30
+print(di)
+
+dic1={1:10, 2:20}
+dic2={3:30, 4:40}
+dic3={5:50,6:60}
+dic4 ={}
+
+print(dic1[1])
+print(dic1)
+dic1[1] =30
+print(dic1[1])
+print(dic1)
+
+def dm(di, dic0):
+  for i in dic0:
+    di[i]= dic0[i]
+  return di
+  
+print(dm(dic4, dic1))
+print(dm(dic4, dic2))
+print(dm(dic4, dic3))
+===============================================
