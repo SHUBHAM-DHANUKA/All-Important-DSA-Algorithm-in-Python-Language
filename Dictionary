@@ -45,3 +45,19 @@ print(multiply)
 
 
 ==========================
+import math
+di = {1:2,3:4}
+#print(di.pop(1))
+print(di)
+print(max(di.values()))
+print(min(di.values()))
+print(len(di))
+
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+for i in d1:
+  if i in d2:
+    d2[i]  = d2[i]+d1[i]
+  else:
+    d2[i] = d1[i]
+print(d2)
