@@ -25,3 +25,23 @@ print(dm(dic4, dic1))
 print(dm(dic4, dic2))
 print(dm(dic4, dic3))
 ===============================================
+di = {1:2,3:4}
+
+if 4 in di:
+  print("true")
+else:
+  print("false")
+
+di = {}
+for i in range(1,15):
+  di[i] =i*i
+
+print(di)
+print(sum(di))
+multiply = 1
+for i in di:
+  multiply  = multiply * i
+print(multiply)
+
+
+==========================
