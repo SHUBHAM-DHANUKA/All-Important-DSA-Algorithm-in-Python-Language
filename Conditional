@@ -28,3 +28,12 @@ for i in range(len(string)):
   else:
     print(i)
     ============
+li = []
+li1 = []
+for i  in range(0,3):
+  for j in range(0,4):
+      li.append(i*j)
+  li1.append(li)
+  li = []
+print(li1)
+=====================================
