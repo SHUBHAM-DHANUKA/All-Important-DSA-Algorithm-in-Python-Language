@@ -67,3 +67,9 @@ if len(a)>6 and len(a)<16:
 else:
   print("could you please check length of it")
   ====================
+  for i in range(0,10):
+  print("*")
+  if (i == 9 ):
+    for i in range(0,10):
+      print("*", end ="")
+      ================
