@@ -49,4 +49,16 @@ print(cal('The quick Brow Fox'))
 
 
 =============================
+def function2():
+  print("Good to go")
+  return "babuji zara dheere chalo"
+def function1():
+  global a
+  a = 5
+
+  return function2()
+  
+print(function1())
+
+print(a)
 
