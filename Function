@@ -26,4 +26,27 @@ def reverse(string):
     
 print(reverse("hi i am good"))
 ===============================
+def factorial(n):
+  if n > 1:
+    return n * factorial(n-1)
+  else:
+    return n
+print(factorial(5))
+
+def cal(string):
+  count = 0 
+  count1 = 0
+  for i in string:
+    if i.islower() :
+      count = count +1
+    elif i.isupper():
+      count1 = count1+1
+  return count, count1
+  
+print(cal('The quick Brow Fox'))
+
+
+
+
+=============================
 
