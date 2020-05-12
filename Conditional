@@ -37,3 +37,16 @@ for i  in range(0,3):
   li = []
 print(li1)
 =====================================
+string = "hi i amd Good"
+print(string.lower())
+
+li= [ '0100','0011','1010','1001','1100','1001' ]
+for i in li:
+  li1 = list(i)
+  n = 0
+  for i in range(len(li1)):
+    n = n + 2**i * int(li1[-(i+1)])  
+  print(n)
+
+=========================================================
+
