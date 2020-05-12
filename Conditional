@@ -1,0 +1,30 @@
+li= [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class":'V', "section":'A'}]
+for i in li:
+  print(type(i), end=' ')
+  
+  
+for i in range(0,6):
+  if i == 3:
+    continue
+  else:
+    print(i, end = ' ')
+    
+a = 0 
+b = 1
+print(a)
+print(b)
+for i in range(0,10):
+  c = a + b
+  print(c, end =' ')
+  a = b 
+  b = c
+
+string = 'fizzbuzz'
+for i in range(len(string)):
+  if i % 3 == 0 :
+    print("fizz")
+  elif i % 5 ==0:
+    print('buzz')
+  else:
+    print(i)
+    ============
