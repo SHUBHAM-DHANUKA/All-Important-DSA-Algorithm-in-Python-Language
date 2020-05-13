@@ -1,0 +1,17 @@
+class myclass:
+  x =5 
+  def myfunction():
+    print("Good to go")
+
+print(myclass.x)
+myclass.myfunction()
+
+class myclass:
+  def __init__(self):
+    print("shubham")
+  def goodtogo(mc):
+    print('dhanuka')
+    
+mc = myclass()
+mc.goodtogo()
+=====================================
