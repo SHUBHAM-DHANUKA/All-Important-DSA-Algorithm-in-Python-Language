@@ -33,3 +33,15 @@ fn = findnumber(numbers,target)
 fn.check()
 
 =========================
+class stringseperator:
+  def stringseperatorfunction(self, string):
+    string = string.split(' ')
+    print(string[::-1])
+      
+  
+  
+string = 'hello .py'
+ss=stringseperator()
+ss.stringseperatorfunction(string)
+===============================
+
