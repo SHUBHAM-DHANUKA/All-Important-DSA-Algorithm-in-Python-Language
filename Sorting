@@ -1,0 +1,23 @@
+class binary_search:
+  def binary_search_function(self,li,n):
+    
+    li.sort()
+    print(li)
+    m = int(len(li)/2)
+    print(m)
+    if n > m :
+      for i in range(int(len(li)/2),len(li)):
+        if li[i]  == n:
+          print("found in second half")
+    elif n < m:
+      for i in range(0,int(len(li)/2)-1):
+        if li[i] == n:
+          print("found in first half")
+    else:
+      print("not found")
+  
+
+li = [1,2,8,5,6]
+bs = binary_search()
+bs.binary_search_function(li, 6)
+================================
