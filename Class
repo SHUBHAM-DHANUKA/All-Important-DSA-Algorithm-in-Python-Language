@@ -44,4 +44,15 @@ string = 'hello .py'
 ss=stringseperator()
 ss.stringseperatorfunction(string)
 ===============================
+class upperclass:
+  def upperclassfunction(self, string,a,b):
+    print(string.upper())
+    print(a*b)
+  
+  
+  
+string = "hello "
+uc = upperclass()
+print(type(uc))
+uc.upperclassfunction(string,5,6)
 
