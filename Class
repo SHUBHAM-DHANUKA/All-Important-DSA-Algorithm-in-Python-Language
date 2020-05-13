@@ -15,3 +15,21 @@ class myclass:
 mc = myclass()
 mc.goodtogo()
 =====================================
+class findnumber:
+  def __init__(self, numbers, target):
+    self.numbers = numbers
+    self.target = target
+    
+  def check(self):
+    for i in range(len(numbers)-1):
+      for j in range(len(numbers)):
+        if numbers[i]+numbers[j] ==50:
+          print(numbers[i],numbers[j])
+    
+    
+numbers= [10,20,10,4,50,40,70]
+target = 50
+fn = findnumber(numbers,target)
+fn.check()
+
+=========================
