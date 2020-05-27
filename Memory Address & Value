@@ -1,0 +1,5 @@
+import ctypes
+a  =5
+b =id(a)
+print(b)
+print(ctypes.cast(b, ctypes.py_object).value)
