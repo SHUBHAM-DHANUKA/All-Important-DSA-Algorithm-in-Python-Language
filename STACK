@@ -1,0 +1,24 @@
+class stack:
+  def __init__(self):
+    self.stack = []
+
+
+  def push(self, data):
+    self.stack.append(data);
+    return self.stack
+
+  def pull(self):
+    if (len(self.stack) != 0):
+      self.stack.pop()
+      return self.stack
+    else:
+      return 'emptyStack'
+
+
+class test:
+  st  = stack()
+  print(st.push(5))
+  print(st.push(6))
+  print(st.pull())
+  print(st.pull())
+  print(st.pull())
