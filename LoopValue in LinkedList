@@ -1,0 +1,51 @@
+class node:
+  def __init__(self):
+    self.data = None
+    self.next = None
+  
+  def setData(self,data):
+    self.data = data
+
+  def setNext(self, next):
+    self.next = next
+
+  def getData(self):
+    return self.data
+
+  def getNext(self):
+    return self.next
+
+
+if __name__=='__main__': 
+
+  '''first = node()
+  first.setData(5)
+  #print(first.getData())
+  second = node()
+  first.setNext(second)
+  
+  second.setData(8)
+  Third = node()
+  second.setNext(Third)
+  
+  Third.setData(10)
+  Third.setNext('Null')'''
+
+  temp2 = node()
+  temp =  temp2
+  for i in range(0,10):
+    temp2.setData(i)
+    temp3 = node()
+    temp2.setNext(temp3)
+    temp2 = temp3
+    #temp3 = None  
+  #Getting the Data of node
+  i =0 
+  while(i<10) :
+    if (temp.getNext() != 'Null'):
+      print(temp.getData())
+      temp = temp.getNext()
+    i = i+1
+    #print(temp)  
+
+
