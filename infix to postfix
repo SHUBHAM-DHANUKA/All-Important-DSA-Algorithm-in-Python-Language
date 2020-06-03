@@ -1,0 +1,38 @@
+class conversion:
+  string = 'a+b'
+  string = string + ')'
+  #print(string)
+  st = []
+  st.append('(')
+  #print(st)
+  dt = {'^':'4','/':'3','*':'3','+':'2','-':'2'} 
+  y = ''
+  
+  for i in string:
+    if i.isalnum():
+      y = y + i
+    
+    if i == '(':
+      st.append(i)
+
+    if i == '^' or i == '/' or i == '*' or i == '-' or i == '+':
+      if st[-1] == '(' or dt[st[-1]] < dt[i]: #percedence less:
+        st.append(i) 
+       #print(st)
+      else:
+        while (st[-1] != '(' or dt[st[-1]] > dt[i]): #percedence great:):
+          z= st.pop()
+          y = y + z 
+        st.append(i)
+          #back to fucntion to check precedence
+        
+    if i == ')':
+      while(st[-1] != '('):
+        k =st.pop()
+        #print(k)
+        y = y + k
+      st.pop()
+
+
+  print(y)
+  print(st)   
