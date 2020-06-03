@@ -1,0 +1,66 @@
+class stack:
+  def __init__(self):
+    self.stack = []
+  
+  def push(self,data):
+    self.stack.append(data)
+    return self.stack
+
+  
+  def pull(self):
+    if(len(self.stack) != 0 ):
+      self.stack.pop()
+      return self.stack
+    else:
+      return "stack is empty"
+'''
+   if __name__=='__main__':
+  st = stack()
+  print(st.push(5))
+  print(st.pull())
+  print(st.pull())'''
+  
+class conversion:
+  def __coversion__(self,string):
+  #string = 'a+(b*c-(d/e^f)*g)*h'
+    self.string = string + ')'
+    #print(self.string)
+    self.st = []
+    self.st.append('(')
+    #print(st)
+    dt = {'^':'4','/':'3','*':'3','+':'2','-':'2', '(':'1'} 
+    y = ''
+  
+    for i in self.string:
+      if i.isalnum():
+       y = y + i
+    
+      if i == '(':
+        self.st.append(i)
+
+      if i == '^' or i == '/' or i == '*' or i == '-' or i == '+':
+        if self.st[-1] == '(' or dt[self.st[-1]] <= dt[i]:
+          self.st.append(i) 
+        else:
+          while self.st[-1] != '('  or dt[self.st[-1]]> dt[i] :
+            k= self.st.pop()
+            y = y + k 
+          self.st.append(i)
+            #back to fucntion to check precedence
+        
+      if i == ')':
+        while(self.st[-1] != '('):
+         k =self.st.pop()
+          #print(k)
+         y = y + k
+        self.st.pop()
+    #print(y)
+    return y
+
+cv = conversion()
+print(cv.__coversion__('a+(b*c-(d/e^f)*g)*h'))
+print(cv.st)   
+print(cv.__coversion__("A + B"))
+print(cv.__coversion__("A + B * C"))
+print(cv.__coversion__("A * ( B + C ) + D"))
+
