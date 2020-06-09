@@ -1,0 +1,151 @@
+print("Here we go")
+class node:
+  def __init__(self):
+    self.data = None
+    self.left = None
+    self.right= None
+
+  def setData(self, data):
+    self.data = data
+  
+  def setLeft(self, left):
+    self.left = left
+
+  def setRight(self, right):
+    self.right = right
+
+  def getData(self):
+    return self.data
+
+  def getLeft(self):
+    return self.left
+
+  def getRight(self):
+    return self.right
+
+
+if __name__== '__main__':
+  start = node()
+  first = node()
+  fourth = node()
+  start.setData(1)
+  start.setLeft(first)
+  start.setRight(fourth)
+
+  fourth.setData(9)
+  fourth.setRight('Null')
+  fifth = node()
+  #print(fifth)
+  fourth.setLeft(fifth)
+  fifth.setData(3)
+  fifth.setLeft('Null')
+  fifth.setRight('Null')
+  first.setData(12)
+  second = node()
+  first.setLeft(second)
+  second.setData(5)
+  second.setLeft('Null')
+  second.setRight('Null')
+  third = node()
+  first.setRight(third)
+  third.setData(6)
+  third.setLeft('Null')
+  third.setRight('Null')
+
+  print("create threee node")
+  def creation(data):
+    temp =  node()
+    temp.setData(data)
+    temp.setLeft('Null')
+    temp.setRight("Null")
+    return temp
+  
+  def linking(previous ,welcome):
+    if previous.getLeft() == 'Null':
+      previous.setLeft(welcome)
+      return previous
+    elif previous.getRight() == 'Null':
+      previous.setRight(welcome)
+      return welcome
+  
+
+  i = 0
+  while(i<8):
+    i = i+1
+    inital= creation(1)
+    if i ==1:
+      primary = inital
+      link = primary
+    else:
+      link= linking(link,inital)
+    
+
+  def printValue(start):
+    #print(">>>><<<<<")
+    print(start.getData())
+    if start.getRight() != 'Null':
+      start.right = start.getRight()
+      printValue(start.right)
+    if start.getLeft() != 'Null':
+      start.left = start.getLeft()
+      printValue(start.left)
+    return start
+  print(printValue(primary))
+    
+    
+
+
+
+  '''
+  print(start.getData())
+  print(first.getData())
+  print(second.getData())
+  print(third.getData())
+  '''
+  def printValue(start):
+    #print(">>>><<<<<")
+    print(start.getData())
+    if start.getRight() != 'Null':
+      start.right = start.getRight()
+      printValue(start.right)
+    if start.getLeft() != 'Null':
+      start.left = start.getLeft()
+      printValue(start.left)
+    return start
+  print(printValue(start))
+  
+  def printValue(start):
+    #print(">>>><<<<<")
+    print(start.getData())
+    if start.getLeft() != 'Null':
+      start.left = start.getLeft()
+      printValue(start.left)
+      
+    if start.getRight() != 'Null':
+      start.right = start.getRight()
+      printValue(start.right)
+    
+    return start
+  print(printValue(start))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
