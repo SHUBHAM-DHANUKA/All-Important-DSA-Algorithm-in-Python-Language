@@ -1,0 +1,122 @@
+print("Hello Binary search tree")
+class node:
+  def __init__(self):
+    self.data = None
+    self.left = None
+    self.right= None
+
+  def setData(self, data):
+    self.data = data
+  
+  def setLeft(self, left):
+    self.left = left
+
+  def setRight(self, right):
+    self.right = right
+
+  def getData(self):
+    return self.data
+
+  def getLeft(self):
+    return self.left
+
+  def getRight(self):
+    return self.right
+
+
+if __name__== '__main__':
+  def creation(data):
+    tmp = node()
+    tmp.setData(data)
+    tmp.setLeft('Null')
+    tmp.setRight('Null')
+    return tmp
+
+
+  def nodeset(start,welcome):
+    if start.getData() > welcome.getData():
+      #print(start.getData())
+      #print(welcome.getData())
+      #print('>>>>>>>>>>><<<<<<<<<<<')
+      if start.getLeft() == 'Null':
+        start.setLeft(welcome)
+        #print(start.getData())
+      else:
+        start = start.getLeft()
+        nodeset(start,welcome)
+        #print(start.getData())
+    else:
+      #print(start.getData())
+      #print(welcome.getData())
+      #print('>>>>>>>>>>><<<<<<<<<<<')
+      if start.getRight() == 'Null':
+        start.setRight(welcome)
+        #print(start.getData())
+      else:
+        start = start.getRight()
+        nodeset(start,welcome)
+        #print(start.getData())
+
+  li = [30,40,10,20,50,35,5]
+  start = creation(li[0])
+  #print(start.getData())
+  temp  = start
+  for i in li[1:]:
+    #print(i)
+    start = creation(i)
+    #print(start.getData())
+    nodeset(temp, start)
+
+  def printing(tmp):
+    print(tmp.getData())
+    if tmp.getLeft() != 'Null':
+      tmp.left = tmp.getLeft()
+      printing(tmp.left)
+    if tmp.getRight() != 'Null':
+      tmp.right = tmp.getRight()
+      printing(tmp.right)
+    #print(tmp.getData())
+  
+  printing(temp)
+  
+  n =50
+
+  def finding(n):
+    
+    def printValue(start):
+      #print(">>>><<<<<")
+      #print(start.getData())
+      if start.getData() == 50:
+        print('value found')
+        return "valueFound"
+      else:
+        if start.getLeft() != 'Null':
+          start.left = start.getLeft()
+          printValue(start.left)
+      
+        if start.getRight() != 'Null':
+          start.right = start.getRight()
+          printValue(start.right)
+    
+    printValue(temp)
+  finding(n)
+  
+
+
+
+  
+  
+
+    
+
+
+
+
+  
+
+
+
+  
+
+
+
