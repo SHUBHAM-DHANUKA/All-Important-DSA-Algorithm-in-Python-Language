@@ -1,0 +1,129 @@
+print("Here we go insertion and deletion")
+class node:
+  def __init__(self):
+    self.data = None
+    self.left = None
+    self.right= None
+
+  def setData(self, data):
+    self.data = data
+  
+  def setLeft(self, left):
+    self.left = left
+
+  def setRight(self, right):
+    self.right = right
+
+  def getData(self):
+    return self.data
+
+  def getLeft(self):
+    return self.left
+
+  def getRight(self):
+    return self.right
+
+
+if __name__== '__main__':
+  def creation(data):
+    temp = node()
+    temp.setData(data)
+    temp.setLeft('Null')
+    temp.setRight('Null')
+    return temp
+  
+  def linking(start,welcome):
+    if start.getData() > welcome.getData():
+      if start.getLeft() == 'Null':
+        start.setLeft(welcome)
+      else:
+        start = start.getLeft()
+        linking(start,welcome)
+    else:
+      if start.getRight() == 'Null':
+        start.setRight(welcome)
+      else:
+        start = start.getRight()
+        linking(start,welcome)
+  
+  li = [30,40,10,20,50,35,5,31,70,37,39,34,49]
+  start = creation(li[0])
+  temp  = start
+  for i in li[1:]:
+    temp2 = creation(i)
+    linking(temp, temp2)
+
+  def printing(tmp):
+    print(tmp.getData())
+    if tmp.getLeft() != 'Null':
+      tmp.left = tmp.getLeft()
+      printing(tmp.left)
+    if tmp.getRight() != 'Null':
+      tmp.right = tmp.getRight()
+      printing(tmp.right)
+    #print(tmp.getData())
+  
+  printing(start)
+
+  n = 31
+  def finding(n, start, pre):
+    #print(">>>>>>>>><<<<<")
+    #print(start.getData())
+    string = ''
+    if start.getData() == n:
+      string = str(start.getData())+" Value found"
+      print(string)
+      #deletion process start from here
+      tp = pre #40 link value
+      tp1 = start.getLeft()
+      tp2 = start.getRight()
+      #print(start.getLeft())
+      if tp1.getData() != 'Null':
+        if tp.getData() < tp1.getData():
+          tp.setRight(tp1)
+        else:
+          tp.setLeft(tp1)
+      
+      if tp1.getRight() == 'Null':
+        tp1.setRight(tp2)
+      else:
+        while(tp1.getRight()!='Null'):
+          tp1 =tp1.getRight()
+        tp1.setRight(tp2)  
+      
+
+      print('>>>>>><<<<<<<<')
+      print(tp2.getData())
+      print(tp.getData())
+      print(tp1.getData())
+
+      
+    else:
+      if start.getLeft() != 'Null':
+        pre = start
+        start.left = start.getLeft()
+        finding(n, start.left, pre)
+      if start.getRight() != 'Null':
+        pre = start
+        start.right = start.getRight()
+        finding(n, start.right, pre)
+      #string ="not found"
+    #return string
+
+  finding(n, start, start)
+  print('>>>>>>><<<<<<<<<<<')  
+  def printing(tmp):
+    print(tmp.getData())
+    if tmp.getLeft() != 'Null':
+      tmp.left = tmp.getLeft()
+      printing(tmp.left)
+    if tmp.getRight() != 'Null':
+      tmp.right = tmp.getRight()
+      printing(tmp.right)
+    #print(tmp.getData())
+  
+  printing(start)
+
+
+
+  
