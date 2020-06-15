@@ -1,0 +1,36 @@
+print("Hello avl tree and Heap Journey")
+class node:
+  def __init__(self, data):
+    self.data = data
+    self.left = 'Null'
+    self.right= 'Null'
+    self.height = 0
+
+if __name__== '__main__':
+  def linking(start,welcome):
+    if start.data > welcome.data:
+      if start.left == 'Null':
+        start.left= welcome
+      else:
+        linking(start.left,welcome)
+    else:
+      if start.right == 'Null':
+        start.right= welcome
+      else:
+        linking(start.right,welcome)
+  nums = [33, 13, 52, 9, 21, 61, 8, 11]
+  start = node(nums[0])
+
+  for num in nums[1:]:
+    temp = node(num)
+    linking(start, temp)
+  
+  def printValue(start):
+    print(start.data, start.height)
+    if start.right != 'Null':
+      printValue(start.right)
+    if start.left != 'Null':
+      printValue(start.left)
+    return start
+  printValue(start)
+    
