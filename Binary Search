@@ -1,0 +1,23 @@
+print("Hello Binary Search")
+li = [3,5,3,45,2,46,46,33,6,5 ]
+li.sort()
+print(li)
+n = 36
+
+def binary_search(n,li):
+  if len(li)==1 and li[0] != n:
+    #print(li[0])
+    print("Not found")
+  else:
+    if li[int(len(li)/2)] == n:
+      print("found")
+    elif  li[int(len(li)/2)] > n:
+      #print(li[int(len(li)/2)])
+      li = li[0: int(len(li)/2)]
+      print(li)
+      binary_search(n,li)
+    else:
+      li=li[int(len(li)/2):]
+      print(li)
+      binary_search(n,li)
+binary_search(n,li)
