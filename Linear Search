@@ -1,0 +1,8 @@
+print("Hello Linear Search")
+li = [5,2,1,4,3,6,7,8, 5]
+li.sort()
+print(li)
+n = 5
+for i in li:
+  if i == n:
+    print("found @ index of", li[1:].index(i))
