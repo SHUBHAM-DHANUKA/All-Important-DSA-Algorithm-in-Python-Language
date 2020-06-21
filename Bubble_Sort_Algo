@@ -1,0 +1,14 @@
+print("Sorting Journey start")
+print("Bubble sort ")
+li = [ 64,34,25,12,22,11,90]
+def bubble_sort(li):
+  j =1 
+  for i  in range(len(li)-1):
+    if li[i] > li[j]:
+      li[i],li[j]= li[j],li[i]
+      print(li)
+    j = j+1  
+  return li  
+for i in li:
+  li= bubble_sort(li)
+print(li)
