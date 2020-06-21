@@ -1,0 +1,14 @@
+li = [3,2,6,4,1,43,543,34,334,3,5,46,45452,23,535]
+#li= ['Ford', 'Mitsubishi', 'BMW', 'VW']
+#Need to sort
+for j in range(len(li)):
+  for i in range(len(li)-1):
+    if li[i]> li[i+1]:
+      temp = li[i]
+      li[i] = li[i+1]
+      li[i+1] = temp
+      print(li)
+      print(">>>>><<<<<")
+    else:
+      pass
+print(li)
