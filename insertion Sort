@@ -1,0 +1,12 @@
+li = [3,2,6,4,1,43,543,34,334,3,5,46,45452,23,535]
+#li= ['Ford', 'Mitsubishi', 'BMW', 'VW']
+#li = [2,3,6,4,1]
+print(li)
+j =0
+for i in range(len(li)):
+  while(j<len(li)):
+    if li[i] > li[j]:
+      li[i],li[j] = li[j], li[i]
+      print(li)
+    j = j+1
+  j = i+1  
