@@ -1,0 +1,38 @@
+print("Quick Sort ")
+#li = [35,33,42,10,14,19,27,44,26,31]
+
+li = [10,16,8,12,15,6,3,9,5]
+def pivot_finder(li):
+  p = 0
+  i = 1 
+  j = len(li) -1
+
+  print(i,j)
+  print(li[i], li[j])
+  print(li)
+  print(">>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<")
+  while (j >= i):
+    if li[i] > li[p] and li[j] < li[p]:
+      li[i],li[j] = li[j],li[i]
+      print(li)
+      i =i+1
+      j =j-1
+    elif li[i] < li[p] and li[j] > li[p]:
+      i =i+1
+      j =j-1
+    elif li[i] < li[p]:
+      i =i+1
+    elif li[j] > li[p]:
+      j = j-1
+  li[j], li[p] = li[p],li[j]
+  print(">>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<")
+  print(li)
+  print(">>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<")
+  return j
+
+
+pivot_finder(li)
+  
+
+
+
