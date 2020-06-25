@@ -1,0 +1,45 @@
+print("Hello Advance Sorting Algo")
+print("Counting Sort")
+
+li = [4,2,2,8,3,3,1,5,3,4,545,54,545,54]
+Max  = max(li)
+Len  = len(li)
+li2 = [0] * Len
+count = [0]*(Max+1)
+count2 =[0]*(Max+1)
+#print(Max)
+#print(li)
+#print(count)
+#print(count2)
+
+for i  in li:
+  if(count[i]==0):
+    counted_Element = li.count(i)
+    count[i] = counted_Element
+
+print(count)
+
+for i in range(0,len(count)):
+  sm = 0 
+  for j in count[:i+1]:
+    #print(j)
+    sm = sm +j 
+  #print(i)
+  #print(sm)
+ 
+  count2[i] = sm
+  #print(count2)
+  #print(">>><<<<")
+#print(count2)
+
+
+for i in range(len(li)):
+  occurance = 0
+  #print(li[i:])
+  for k in li[i:]:
+    if li[i] == k:
+      occurance = occurance + 1
+  #print(li[i], occurance)
+  li2[count2[li[i]] - occurance] =li[i]
+
+print(li2)
