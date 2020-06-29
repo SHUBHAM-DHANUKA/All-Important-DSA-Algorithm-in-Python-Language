@@ -1,0 +1,38 @@
+effort2 = list()
+effort = [[2,1,0,4,5],[3,4,1,2,1],[1,9,2,6,1]]
+minimum = 0
+for i in range(len(effort[0])):
+  li = list()
+  for j in range(len(effort)):
+    li.append(effort[j][i])
+
+  effort2.append(li)
+print(effort2)
+temp  =10
+temp2 =15 
+for i in range(len(effort2)):
+  check_minimum = min(effort2[i])
+  temp = effort2[i].index(check_minimum)
+  if ( temp != temp2):
+    minimum = minimum +check_minimum
+    #print(minimum)
+    temp2 = temp
+    #print(temp, temp2)
+  else:
+    tl =list()
+    tl = effort2[i].copy()
+    #print(tl)
+    effort2[i].sort()
+    minimum = minimum + effort2[i][1]
+    temp2 = tl.index(effort2[i][1])
+    #temp2 = tl.index(c)
+    #print(temp, temp2)
+    #print(minimum)
+    #print(">>>>>>><<<<<<<<<<<<<<")
+print(minimum, end='\n') 
+#print(effort2[0].sort()[1])
+
+li = [23,43,2]
+li.sort()
+#print(li)
+#print(li1)
