@@ -1,0 +1,54 @@
+class node:
+  def __init__(self,data):
+    self.data = data
+    self.left =  None
+    self.right = None
+
+start = node(12)
+start2 = start
+#print(start.data)
+#print(start.left)
+#print(start.right)
+
+def linking(start, data,left_height,right_height):
+  newNode = node(data)
+  if(start.left == None ):
+    start.left = newNode
+    left_height = left_height +1
+    return start.left
+    #print(start.left.data)
+    #print(left_height)
+  elif(start.right == None):
+    start.right = newNode
+    right_height = right_height +1
+    return start.right
+    #print(start.right.data)
+    #print(right_height)
+  else:
+    if left_height > right_height:
+      start = start.right
+      linking(start, newNode,left_height,right_height)
+    else:
+      start = start.left
+      linking(start, newNode,left_height,right_height)
+  
+
+li = [12,3,1,4,45,34,60,76,87]
+left_height =0
+right_height = 0 
+for i in li[1:]:
+  start= linking(start,i,left_height,right_height)
+
+
+def printing(start):
+  print(start.data)
+  #print(start.left)
+  if (start.left != None):
+    start =start.left
+    printing(start)
+  if (start.right != None):
+    start = start.right
+    printing(start)
+
+
+printing(start2)
