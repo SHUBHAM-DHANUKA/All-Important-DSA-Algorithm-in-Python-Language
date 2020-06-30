@@ -1,0 +1,46 @@
+print("Advance Sorting Algo")
+print("Bucket Sort")
+array = [.42, .33, .32, .12, .37, .47, .51]
+
+
+bucket = []
+for i in range(len(array)):
+  bucket.append([])
+#print(bucket)
+
+
+for j in array:
+  index = int(10 * j)
+  bucket[index].append(j)
+
+
+def selection_sort(li):
+  k = 0 
+  i = 0 
+  for j in range(len(li)):
+    while(i<len(li)):
+      if li[k] > li[i]:
+        k = i
+      i = i+1
+    li[j], li[k] = li[k],li[j]
+    #print(li[j],li[k])
+    #print(li)
+    k = j+1
+    i = k
+  #print(li)
+
+print(bucket)
+for i in bucket:
+  selection_sort(i)
+
+print(bucket)
+
+li = list()
+for i in bucket:
+  if len(i) != 0:
+    for j in i:
+      li.append(j)
+print(li)
+    
+
+
