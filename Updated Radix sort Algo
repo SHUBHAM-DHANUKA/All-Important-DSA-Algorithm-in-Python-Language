@@ -1,0 +1,41 @@
+def counting_sort(list_value,li):
+ 
+  Max  = max(li)
+  Len  = len(li)
+  li2 =   [0] * Len
+  count = [0]*(Max+1)
+  count2 =[0]*(Max+1)
+  for i  in li:
+    if(count[i]==0):
+      counted_Element = li.count(i)
+      count[i] = counted_Element
+  for i in range(0,len(count)):
+    sm = 0 
+    for j in count[:i+1]:
+      sm = sm +j 
+    count2[i] = sm
+
+
+  for i in range(len(li)):
+    occurance = 0
+    for k in li[i:]:
+      if li[i] == k:
+        occurance = occurance + 1
+    li2[count2[li[i]] - occurance] =list_value[i]
+  return li2
+ 
+li = [4,2,2,8,3,3,1,5,3,4,545,54,545,54]
+li1 =li
+coming_list =li
+Max = len(str(max(li)))
+index = 0
+while(index<Max):
+  index = index+1
+  temp_list =list()
+  for i in range(len(li1)):
+    temp = int(li1[i]%10)
+    temp_list.append(temp)
+  coming_list=counting_sort(coming_list,temp_list)
+  print(coming_list)
+  print(">>>>>>>>>>><<<<<<<<<<<<<<")
+  li1 = [int(x / 10**index) for x in coming_list]
