@@ -1,0 +1,90 @@
+print("Advance Sorting Algo")
+print("Heap Sorting Algorithm")
+class node:
+  def __init__(self, data):
+    self.data = data
+    self.left = None
+    self.right= None
+    #self.height = 0
+def linking(start,welcome):
+  if start.data > welcome.data:
+    if start.left == None:
+      start.left= welcome
+    else:
+      linking(start.left,welcome)
+  else:
+    if start.right == None:
+      start.right= welcome
+    else:
+      linking(start.right,welcome)
+
+if __name__== '__main__':
+  #nums = [33, 13, 52, 9, 21, 61, 8, 11]
+  nums = [1,12,9,5,6,10]
+  start = node(nums[0])
+
+  for num in nums[1:]:
+    temp = node(num)
+    linking(start, temp)
+  '''
+  def printValue(start):
+    #print(start.data)
+    if start.right != None:
+      printValue(start.right)
+    if start.left != None:
+      printValue(start.left)
+    return start
+  printValue(start)
+  '''
+  pointer_list = list()
+  def printValue(start):
+    if start.right != None:
+      #pointer_list.append(start)
+      printValue(start.right)
+      
+    pointer_list.append(start)
+    if start.left != None:
+      #pointer_list.append(start)
+      printValue(start.left)
+  print(">>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<")
+    #pointer_list.append(start)
+    #while(start.right != None):
+      #pointer_list.append(start)
+      #start=start.right
+    #pointer_list.append(start)
+      #start.data = start
+      #print(start.data)
+    #if start.left != None:
+      #printValue(start.left)
+    #return start
+  printValue(start)
+  #print(pointer_list[0].left.data)
+   
+  i =0 
+  while(i<len(pointer_list)):
+    print(pointer_list[i].data)
+    i =i+1
+  print(">>>>>>>>>>><<<<<<<<<<<<<<")
+  i = 0
+  while(i<len(pointer_list)):
+    #print(pointer_list[i].data)
+    if (pointer_list[i].right != None and  pointer_list[i].data > pointer_list[i-1].data):
+      #print(pointer_list[i].data, pointer_list[i-1].data)
+      pointer_list[i].data, pointer_list[i-1].data= pointer_list[i-1].data,pointer_list[i].data
+      
+    i =i+1
+ 
+  i =0 
+  while(i<len(pointer_list)):
+    print(pointer_list[i].data)
+    i =i+1
+  print(">>>>>>>>>>><<<<<<<<<<<<<<")
+
+  def printValue(start):
+    print(start.data)
+    if start.right != None:
+      printValue(start.right)
+    if start.left != None:
+      printValue(start.left)
+    return start
+  printValue(start)
