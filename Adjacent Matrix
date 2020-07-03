@@ -1,0 +1,46 @@
+print("Graph Jouney Start!")
+class Graph:
+  def __init__(self,size):
+    self.matrix = list()
+    for i in range(0,size):
+      self.matrix.append([])
+      for j in range(0,size):
+        self.matrix[i].append(0)
+    print(self.matrix)
+
+  def addEdge(self,v1,v2):
+    #print(self.matrix)
+    if v1 == v2:
+      self.matrix[v1][v2]=0
+      return
+    self.matrix[v1][v2]= 1
+    self.matrix[v2][v1]= 1 
+    print(self.matrix)
+
+  def removeEdge(self,v1,v2):
+    self.matrix[v1][v2]= 0
+    self.matrix[v2][v1]= 0
+    print(self.matrix)
+  
+  def finder(self,v1,v2):
+    return self.matrix[v1][v2]
+  
+
+gh = Graph(4)
+gh.addEdge(0,1)
+gh.addEdge(0,2)
+gh.addEdge(0,3)
+gh.addEdge(1,2)
+gh.addEdge(1,0)
+gh.addEdge(2,1)
+gh.addEdge(2,0)
+gh.addEdge(3,0)
+gh.addEdge(1,1)
+#gh.removeEdge(1,2)
+#gh.addEdge(1,3)
+
+print(gh.finder(1,1))
+print(gh.finder(1,2))
+#print(gh.matrix)
+
+  
