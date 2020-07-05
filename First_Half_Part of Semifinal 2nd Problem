@@ -1,0 +1,22 @@
+no_of_people = 3
+loop =1
+for i in range(2,no_of_people):
+  loop =loop +3
+print(loop)
+
+
+def one_set():
+  for j in range(0,3):
+    incoming(j)
+
+li = list()
+def incoming(j):
+  li.append([j,0])
+  li.append([j,1])
+  li.append([j,2])
+
+
+for i in range(0,loop):
+  one_set()
+
+print(li)
