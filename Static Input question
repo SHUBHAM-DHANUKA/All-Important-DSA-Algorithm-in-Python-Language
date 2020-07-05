@@ -1,0 +1,71 @@
+
+no_of_people = 2
+loop =1
+for i in range(2,no_of_people):
+  loop =loop +3
+#print(loop)
+
+
+def one_set():
+  for j in range(0,3):
+    incoming(j)
+
+li = list()
+def incoming(j):
+  li.append([j,0])
+  li.append([j,1])
+  li.append([j,2])
+
+
+for i in range(0,loop):
+  one_set()
+
+#print(li)
+
+class Graph:
+  def __init__(self,size):
+    self.matrix = list()
+    for i in range(0,size):
+      self.matrix.append([])
+      for j in range(0,size):
+        self.matrix[i].append(0)
+    #print(self.matrix)
+
+  def addEdge(self,v1,v2):
+    #print(self.matrix)
+    if (v1 == 2 and  v2 ==0) or (v1 ==2 and v2 ==1):
+      self.matrix[v1][v2]=0
+      return
+    self.matrix[v1][v2]= 1
+    #self.matrix[v2][v1]= 1 
+    #print(self.matrix)
+  
+  def add(self):
+    addition = 0
+    for i in range(len(self.matrix)):
+      for j in range(len(self.matrix)):
+          addition = addition + self.matrix[i][j]
+    return addition
+
+
+  def removeEdge(self,v1,v2):
+    self.matrix[v1][v2]= 0
+    self.matrix[v2][v1]= 0
+    print(self.matrix)
+  
+  def finder(self,v1,v2):
+    return self.matrix[v1][v2]
+  
+
+gh = Graph(3)
+for i in li:
+  gh.addEdge(i[0],i[1])
+
+print(gh.add(),end="\n")
+
+#gh.removeEdge(1,2)
+#gh.addEdge(1,3)
+
+#print(gh.finder(1,1))
+#print(gh.finder(1,2))
+#print(gh.matrix)
