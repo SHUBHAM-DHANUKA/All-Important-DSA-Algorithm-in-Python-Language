@@ -1,0 +1,28 @@
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3','1'])}
+#print(graph)
+#print(graph['0'])
+visited_list = list()
+non_visited_list = list()
+class searching:
+  def __init__(self):
+    self.begin = -1
+  
+  def visiting_node(self,k):
+    for v in graph[k]:
+      if v not in visited_list:
+        non_visited_list.append(v)
+    visited_list.append(k)
+    print(visited_list)
+    print(non_visited_list)
+    print(">>>>>>>>>>>>>><<<<<<<<<<<<<<<")
+    #print(graph[non_visited_list[self.begin]])
+    if len(non_visited_list) != 0: 
+      self.visiting_node(non_visited_list.pop(0))
+      
+
+sg = searching()
+sg.visiting_node('0')
