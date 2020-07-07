@@ -1,0 +1,29 @@
+print("Graph Jouney Start!")
+print("BFS AND DFS")
+
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3','1'])}
+visited_list = list()
+non_visited_list = list()
+class searching:
+  def __init__(self):
+    self.begin = -1
+  
+  def visiting_node(self,k):
+    for v in graph[k]:
+      if v not in visited_list:
+        if v not in non_visited_list:
+          non_visited_list.append(v)
+    visited_list.append(k)
+    print(visited_list)
+    print(non_visited_list)
+    print(">>>>>>>>>>>>>><<<<<<<<<<<<<<<")
+    if len(non_visited_list) != 0: 
+      self.visiting_node(non_visited_list.pop(-1))
+      
+
+sg = searching()
+sg.visiting_node('0')
