@@ -1,0 +1,42 @@
+'''
+G = [[0, 9, 75, 0, 0],
+     [9, 0, 95, 19, 42],
+     [75, 95, 0, 51, 66],
+     [0, 19, 51, 0, 31],
+     [0, 42, 66, 31, 0]]
+print(G)
+'''
+G = [ [0, 2, 0, 6, 0], 
+            [2, 0, 3, 8, 5], 
+            [0, 3, 0, 0, 7], 
+            [6, 8, 0, 0, 9], 
+            [0, 5, 7, 9, 0]] 
+  
+
+visited_list = list()
+non_visited_list = list()
+
+def BFS(i):
+  Copy = G[i].copy()
+  G[i].sort()
+  for j in G[i]:
+    #print(j)
+    if Copy.index(j) not in visited_list:
+      if j != 0:
+        minimum = j
+        non_visited_list.append(Copy.index(minimum))
+        break
+      
+  #print(Copy.index(minimum))
+   
+  visited_list.append(i)
+  print(visited_list)
+  print(non_visited_list)
+  print(">>>>>>>>>>>>>><<<<<<<<<<<<<<<")
+  if len(non_visited_list) != 0: 
+    print(i,"->" ,non_visited_list[0],",", Copy[non_visited_list[0]])
+  
+    BFS(non_visited_list.pop(0))
+  
+BFS(0)
+      
