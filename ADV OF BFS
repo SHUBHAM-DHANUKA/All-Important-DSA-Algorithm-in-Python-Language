@@ -1,0 +1,38 @@
+print("Connected Graph Jouney Start!")
+print("Undirected Graph Calculation")
+print("Krusal Algorithm")
+dictionary = {'0':{'1':4,'7':8},
+              '1':{'0':4,'7':11,'2':8},
+              '7':{'0':8,'1':11,'8':7,'6':1},
+              '2':{'1':8,'8':2,'5':4,'3':7},
+              '8':{'2':2,'7':7,'6':6}}
+li = list()
+for i in dictionary:
+  li.append(list(dictionary[i].values()))
+temp_list = list()
+
+for i in range(0,len(li)):
+  #print(i)
+  for j in range(len(li[i])):
+    temp_list.append(li[i][j])
+temp_list.sort()
+
+visited_list = list()
+non_visited_list = list()
+def get_key(val): 
+  for key in dictionary:
+    fk = key
+    sk = 0
+    for key, value in dictionary[key].items():
+      if value == val:
+        sk = key
+        break
+    if sk != 0:
+      if not(fk in visited_list and sk in visited_list):
+        visited_list.append(fk)
+        visited_list.append(sk)
+        print(fk, sk, val)
+
+
+for i in temp_list:
+  get_key(i)
