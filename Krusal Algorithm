@@ -1,0 +1,71 @@
+print("Connected Graph Jouney Start!")
+print("Undirected Graph Calculation")
+print("Krusal Algorithm")
+dictionary = {'0':{'1':9,'2':75},
+              '1':{'0':9,'2':95,'4':51,'3':19},
+              '2':{'0':75,'1':95,'3':51,'4':66},
+              '3':{'1':19,'2':51,'4':31},
+              '4':{'1':51,'2':66,'3':31}}
+#print(dictionary)
+#print(dictionary.values())
+li = list()
+for i in dictionary:
+  li.append(list(dictionary[i].values()))
+  #li.append()
+#print(li)
+temp_list = list()
+
+for i in range(0,len(li)):
+  #print(i)
+  for j in range(len(li[i])):
+    temp_list.append(li[i][j])
+temp_list.sort()
+#print(temp_list)
+
+visited_list = list()
+non_visited_list = list()
+def get_key(val): 
+  for key in dictionary:
+    fk = key
+    sk = 0
+    for key, value in dictionary[key].items():
+      #print(key,value)
+      if value == val:
+        sk = key
+        break
+        #print(sk)
+    if sk != 0:
+      #print(fk,sk)
+      if not(fk in visited_list and sk in visited_list):
+        visited_list.append(fk)
+        visited_list.append(sk)
+        print(fk, sk, val)
+
+
+for i in temp_list:
+  #print(i)
+  get_key(i)
+  #print(">>>><<<<")
+#print(get_key(9))
+#print(get_key(75))
+#print(get_key(19))
+#print(get_key(51))
+#print(get_key(66))
+#print(dictionary.items())
+#print(dictionary[i])
+#print(dictionary[i].values())
+
+'''
+
+di = {'1':{'3':19,'4':23},'0':{'3':19,'4':23}}
+for key in di:
+  fk = key
+  sk = 0
+  for key, value in di[key].items():
+    #print(key,value)
+    if value == 19:
+      sk = key
+      break
+      #print(sk)
+  print(fk,sk)
+'''
