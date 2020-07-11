@@ -1,0 +1,52 @@
+print("Directed Graph Jouney Start!")
+print("Dijkstra Algorithm")
+import numpy as np
+visited_list = list()
+non_visited_list = list()
+vertex = 6 
+'''starting from zero'''
+'''
+given_edge = [[0,4,4,0,0,0],
+        [4,0,2,0,0,0],
+        [4,2,0,3,1,6],
+        [0,0,3,0,0,2],
+        [0,0,1,0,0,3],
+        [0,0,6,2,3,0]]
+'''
+given_edge = [[0, 4, 0, 0, 0, 0, 0, 8, 0], 
+        [4, 0, 8, 0, 0, 0, 0, 11, 0], 
+        [0, 8, 0, 7, 0, 4, 0, 0, 2], 
+        [0, 0, 7, 0, 9, 14, 0, 0, 0], 
+        [0, 0, 0, 9, 0, 10, 0, 0, 0], 
+        [0, 0, 4, 14, 10, 0, 2, 0, 0], 
+        [0, 0, 0, 0, 0, 2, 0, 1, 6], 
+        [8, 11, 0, 0, 0, 0, 1, 0, 7], 
+        [0, 0, 2, 0, 0, 0, 6, 7, 0] 
+        ]; 
+
+print(given_edge)
+shortage_edge =[np.inf]*len(given_edge[0])
+#shortage_edge =np.inf *len(given_edge[0]))
+shortage_edge[0] =0 
+print(shortage_edge)
+
+
+#given_key = {}
+
+def finding_shortest_path(i,j):
+  key1 =i
+  key2= j
+  if [key1,key2] or [key2, key1] not in visited_list:
+    if shortage_edge[key2] > shortage_edge[key1] + given_edge[i][j]:
+      shortage_edge[key2] = shortage_edge[key1] + given_edge[i][j]
+      print(i,j, given_edge[i][j])
+      visited_list.append([key1,key2])
+      #visited_list.append(key2)
+     #print(visited_list)
+      print(shortage_edge)
+ 
+for i in range(len(given_edge)):
+  for j in range(len(given_edge[0])):
+    if given_edge[i][j]!=0:
+      #print(i,j )
+      finding_shortest_path(i,j)
