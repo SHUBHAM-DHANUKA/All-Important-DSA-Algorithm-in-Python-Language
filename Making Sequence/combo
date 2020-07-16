@@ -1,0 +1,12 @@
+weight = [2,3,4,5]
+for i in range(1,len(weight)+1):
+  print(weight[:i])
+  taking = weight[:i]
+  temp_list = list()
+  for i in range(len(taking)):
+    temp_list.append(taking[i])
+    if len(taking)>1 and len(taking)<length+1:
+      for j in taking[i+1:]:
+        temp_list.append((taking[i],j))
+  print(temp_list)
+  print(">>>><<<<<<<<<<")
