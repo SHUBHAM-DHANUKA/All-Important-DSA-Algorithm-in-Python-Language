@@ -1,0 +1,77 @@
+print("Dynamic programming Journey Started")
+print("knapsack problem and weight loading algorithm and priority")
+
+profit = [1,2,5,6]
+weight = [2,3,4,5]
+length = len(profit)
+#print(length)
+max_limit_of_weight = 8
+
+#weight can go upto o to 8 (including 8 )
+#number_of_sequence can go from o to 4  ( including 4) 
+table  = list()
+for i in range(0,length+1):
+  table.append([0]*(max_limit_of_weight+1))
+print(table)
+
+for k in range(1,len(weight)+1):
+  #print(weight[:k])
+  taking = weight[:k]
+  temp_list = list()
+  for i in range(len(taking)):
+    temp_list.append(taking[i])
+    if len(taking)>1 and len(taking)<length+1:
+      for j in taking[i+1:]:
+        temp_list.append((taking[i],j))
+  print(temp_list)
+  print(">>>><<<<<<<<<<")
+  for i in temp_list:
+    weight_combo = 0
+    if type(i) == int:
+      weight_combo =i
+      profit_calculation = 0
+      profit_calculation = profit[weight.index(i)]
+    else:
+      weight_combo=sum(i)
+      profit_calculation = 0
+      for j in i:
+        profit_calculation= profit_calculation + profit[weight.index(j)]
+    #print(weight_combo,profit_calculation)
+    if weight_combo <= max_limit_of_weight:
+      if profit_calculation > table[k][weight_combo]:
+        table[k][weight_combo] = profit_calculation
+  
+print(table)
+#print(max(table))
+max_profit = 8
+profit_max = list()
+for i in table:
+  profit_max.append(max(i))
+
+print(weight[profit_max.index(max(profit_max))-1])
+
+
+#print(temp_list[1][1])
+#print(len(temp_list[0]))
+'''
+for i in temp_list:
+  weight_combo = 0
+  if type(i) == int:
+    weight_combo =i
+    profit_calculation = 0
+    profit_calculation = profit[weight.index(i)]
+  else:
+    weight_combo=sum(i)
+    profit_calculation = 0
+    for j in i:
+      profit_calculation= profit_calculation + profit[weight.index(j)]
+
+  print(weight_combo,profit_calculation)
+  if weight_combo <= max_limit_of_weight:
+    if profit_calculation > table[4][weight_combo]:
+      table[4][weight_combo] = profit_calculation
+  
+print(table[4])
+'''
+
+
