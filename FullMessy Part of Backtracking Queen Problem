@@ -1,0 +1,107 @@
+print("backtracking queen problem")
+print("possible row, column, diagonal of a cell")
+
+#row = [1,2,3,4]
+#column = [1,2,3,4]
+matrix = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+#print(matrix)
+#print(matrix[2][3])
+#cell = [2],[3]
+possible_list = list()
+attack_list = list()
+
+class queen_target_finder:
+  def row_and_column(self,i,j):
+    for item in range(len(matrix)):
+      #print(i,item)
+      #print(item,j)
+      attack_list.append([i,item])
+      attack_list.append([item,j]) 
+  
+  def addition(self, i ,j):
+    if i < len(matrix) and j < len(matrix):
+      #print(i, j)
+      attack_list.append([i,j])
+      i = i+1
+      j = j+1
+      self.addition(i,j)
+  
+  def subtractor(self,i,j):
+    if i >= 0 and j >= 0:
+      #print(i,j)
+      attack_list.append([i,j])
+      i = i-1
+      j = j-1
+      self.subtractor(i,j)
+  
+  def forward_reverse(self,i,j):
+    if i >=0 and j< len(matrix):
+      #print(i,j)
+      attack_list.append([i,j])
+      i = i-1
+      j = j+1
+      self.forward_reverse(i,j)
+  
+  def backward_reverse(self,i,j):
+    if i < len(matrix) and j >=0:
+      #print(i ,j )
+      attack_list.append([i,j])
+      i = i+1
+      j = j-1
+      self.backward_reverse(i,j)
+
+def queen_target(i,j):
+  qtf = queen_target_finder()
+  qtf.row_and_column(i,j)
+  qtf.addition(i,j)
+  qtf.subtractor(i,j)
+  qtf.forward_reverse(i,j)
+  qtf.backward_reverse(i,j)
+
+
+
+def possible_combo():
+  for i in range(len(matrix)):
+    for j in range(len(matrix)):
+      possible_list.append([i,j])
+possible_combo() 
+#print(possible_list)
+
+def difference_generator(possible_list,attack_list):
+  for i in attack_list:
+    if i in possible_list:
+      possible_list.remove(i)
+  return possible_list
+
+
+queen_target(0,0)
+print(attack_list)
+difference_generator(possible_list,attack_list)
+print(possible_list)
+
+'''
+possible_stack = list()
+queen_placed  =0 
+def queen_placement(placed,i,j):
+  queen_placed  = placed 
+  if queen_placed != 2:
+    queen_target(i,j)
+    print(attack_list)
+    print(">>>>>>>>>>>>><<<<<<<<<<<<<<")
+    difference_generator(possible_list,attack_list)
+    print(possible_list)
+    print(">>>>>>>>>>>>><<<<<<<<<<<<<<")
+    for k in range(0,4):
+      if possible_list[k][i]== i+1:
+        possible_stack.append(possible_list[k])
+    queen_placed = queen_placed+1
+    print(possible_stack)
+    print(">>>>>>>>>>>>><<<<<<<<<<<<<<")
+    li = possible_stack.pop(0)
+    print(li[0],li[1])
+    queen_placement(queen_placed,li[0],li[1])
+  
+queen_placement(queen_placed,0,0)
+
+
+'''
