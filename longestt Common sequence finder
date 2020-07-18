@@ -1,0 +1,36 @@
+print("Dynamic programming Journey Started")
+print("longest common sequence and floyd warshall Alg")
+s1 = ['B', 'C', 'D', 'A', 'A', 'C', 'D']
+s2 = ['A', 'C', 'D', 'B', 'A', 'C']
+
+if len(s1)>len(s2):
+  temp_list = s2
+  temp_list2= s1
+else:
+  temp_list = s1
+  temp_list2 = s2
+
+print(temp_list)
+print(temp_list2)
+#temp_list.pop(0)
+#print(temp_list)
+
+
+def combo_finder(temp_list1,temp_list2):
+  str = ''
+  j = 0
+  for i in range(len(temp_list1)):
+    while(j<len(temp_list2)):
+      if temp_list1[i] == temp_list2[j]:
+        str = str + temp_list1[i]
+        k = j
+        break
+      else:
+        j =j+1
+    j = k
+  print(str)
+
+for i in temp_list:
+  #print(temp_list)
+  combo_finder(temp_list,temp_list2)
+  temp_list.pop(0)
