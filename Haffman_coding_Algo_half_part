@@ -1,0 +1,27 @@
+print("Haff-Maan Coding")
+
+string = 'BCCABBDDAECCBBAEDDCC'
+string_count ={}
+
+for i in string:
+  if i not in string_count:
+    string_count[i]= string.count(i)
+
+print(string_count)
+
+string_count = {k: v for k, v in sorted(string_count.items(), key=lambda item: item[1])}
+
+print(string_count)
+
+print("chracter",len(string_count))
+
+n = 1
+bit_require =0
+while(True):
+  if 2**n > len(string_count):
+    bit_require  = n
+    break
+  else:
+    n = n+1
+
+print("2**n", bit_require)
